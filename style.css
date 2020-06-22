@@ -3,7 +3,7 @@
 *{
   box-sizing: border-box;
 }
-
+/* I like this font. used font sizing by vw*/
 body {
   font-family: Calibri,Candara,Segoe,Segoe UI,Optima,Arial,sans-serif; 
   font-size: 1.3vw;

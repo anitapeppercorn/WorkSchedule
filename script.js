@@ -1,11 +1,20 @@
 
 // Declaration of initial variables
-var currentDay = $("#currentDay");
+var currentHour = moment().format("H");
+var currentDateHourMinute = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+var toDoItems = [];
+
+// instead of typing $, you can type jQuery, 
+//with exactly the same results $ is just a synonym for jQuery, 
+// instead of $.get() you could say jQuery.get().
+//$ is the name of a function, and the parentheses represent a 
+//call to that function. It’s a multi-purpose function 
+// can create new DOM elements
+// or select elements when used with a CSS selector:
+var currentTime = $("#currentTime");
 var scheduleArea = $(".schedule");
 var timeRow = $(".time-row");
-var currentDate = moment().format("dddd, MMMM Do");
-var currentHour = moment().format("H");
-var toDoItems = [];
+
 
 // An array of objects
 function startSchedule(){
@@ -76,8 +85,9 @@ if(!localStorage.getItem("todos")){
   startSchedule();
 } //otherwise we will get it from local storage
 
-//display current date
-currentDay.text(currentDate);
+
+//display current time
+currentTime.text(currentDateHourMinute);
 
 //render schedule from local storage
 renderSchedule();
